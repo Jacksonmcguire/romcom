@@ -13,7 +13,6 @@ var savedCovers = [
 
 // Add your event listeners here 👇
 window.addEventListener('load', randomBookCover)
-newRandomCover.addEventListener('click', randomBookCover )
 // Create your event handlers and other functions here 👇
 
 

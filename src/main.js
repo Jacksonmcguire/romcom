@@ -12,6 +12,11 @@ var formView = document.querySelector('.form-view');
 var homeView = document.querySelector('.home-view');
 var viewSavedView = document.querySelector('.saved-view');
 var homeButton = document.querySelector('.home-button');
+var submitNewButton = document.querySelector('.create-new-book-button');
+var userCover = document.getElementById('cover');
+var userTitle = document.getElementById('title');
+var userDesc1 = document.getElementById('descriptor1');
+var userDesc2 = document.getElementById('descriptor2');
 // We've provided a few variables below
 
 var savedCovers = [
@@ -19,13 +24,12 @@ var savedCovers = [
 ];
 
 // Add your event listeners here 👇
-
-// Add your event listeners here 👇
 window.addEventListener('load', randomBookCover);
 newRandomCover.addEventListener('click', randomBookCover);
 makeNewButton.addEventListener('click', displayForm);
 viewSavedButton.addEventListener('click', showSavedCoverPage);
 homeButton.addEventListener('click', showHomePage);
+submitNewButton.addEventListener('click', submitForm);
 // Create your event handlers and other functions here 👇
 
 
@@ -70,4 +74,21 @@ function showHomePage() {
   saveCoverButton.classList.remove("hidden");
   viewSavedView.classList.add("hidden");
   formView.classList.add("hidden");
+}
+function displayCover(userInstance) {
+  coverImage.src = userInstance.cover;
+  coverTitle.innerText = userInstance.title;
+  coverTagline1.innerText = userInstance.tagline1;
+  coverTagline2.innerText = userInstance.tagline;
+  showHomePage();
+}
+
+function submitForm(event) {
+  covers.push(userCover.value);
+  titles.push(userTitle.value);
+  descriptors.push(userDesc1.value);
+  descriptors.push(userDesc2.value);
+  var newUserCover = new Cover(userCover.value, userTitle.value, userDesc1.value, userDesc2.value);
+  displayCover(newUserCover);
+  event.preventDefault();
 }

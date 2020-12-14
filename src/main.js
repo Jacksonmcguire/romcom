@@ -17,6 +17,7 @@ var userCover = document.getElementById('cover');
 var userTitle = document.getElementById('title');
 var userDesc1 = document.getElementById('descriptor1');
 var userDesc2 = document.getElementById('descriptor2');
+var allSavedCovers = document.querySelector('.saved-covers-section');
 // We've provided a few variables below
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
